@@ -1,4 +1,5 @@
-@extends('layouts.front')
+@extends('layouts.font')
+
 @selection('content')
 
     <div class="jumbotron">
