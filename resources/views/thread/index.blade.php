@@ -1,5 +1,5 @@
 @extends('layouts.front')
-@selection('content')
+@section('content')
 
 <h2> Threads </h2>
 
@@ -17,4 +17,4 @@
 
         @endforelse
     </div>
-@endselection
+@endsection
