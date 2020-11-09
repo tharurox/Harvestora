@@ -1,7 +1,5 @@
-@extends('layouts.font')
-
-@selection('content')
-
+@extends('layouts.front')
+@section('content')
     <div class="jumbotron">
         <div class="container">
             <h1> Join Harvesotra Community </h1>
@@ -13,4 +11,4 @@
         </div>
     </div>
 
-@endselection
+@endsection
