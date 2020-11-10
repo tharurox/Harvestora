@@ -1,6 +1,6 @@
 @extends('layouts.font')
 
-@selection('content')
+@section('content')
 
     <div class="jumbotron">
         <div class="container">
@@ -13,4 +13,4 @@
         </div>
     </div>
 
-@endselection
+@endsection
