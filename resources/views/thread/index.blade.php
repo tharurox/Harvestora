@@ -1,5 +1,4 @@
 @extends('layouts.front')
-
 @section('content')
 
 <h2> Threads </h2>
