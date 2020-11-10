@@ -18,37 +18,60 @@
  </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="display-1 " href="/">Harvestora</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse justify-content-center row " id="navbarColor02">
-         
-            <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="/home">Home
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/thread">Threads</a>
-            </li>
-          </ul>
-       
+    @include('layouts.partials.navbar')
 
-       
-          <form class="form-inline my-2 my-lg-0 justify-content-end">
-            <input class="form-control mr-sm-2 " type="text" placeholder="Search">
-            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-          </form>
-        </div>
-       
-      </nav>
+    @yield('banner')
 
 <div class ="container">
+
+    <div class="row">
+
+    <div class="row content-heading">
+
+    <div class="col-md-3"><h4>Catogory</h4></div>
+
+    <div class="col-md-9">
+
+        <div class="row">
+
+            <div class="col-md-4"><h4 class="main-content-heading">@yield('heading')</h4></div>
+
+            <div class="col-md-offset-6 col-md-2">
+               <a  class="btn btn-primary" href='{{route('thread.create')}}'> Create thread </a>
+                     </div>
+                 </div>
+              </div>
+
+
+        </div>
+    </div>
+
+
+    <div class="row">
+
+        {{--//catogory section--}}
+  <div class="col-md-3">
+
+    <ul class="list-group">
+
+        <a href="{{route('thread.index')}}" class="list-group-item">
+        
+        <span class="badge">14</span>
+        All thread
+        </a>
+
+        <a href="" class="list-group-item">
+
+            <span class="badge">2</span>
+           PHP
+        </a>
+    </ul>
+  </div>
+  <div class="col-md-9 well">
     @yield('content')
+</div>
+    </div>
+  
 </div>
 
 <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous">
