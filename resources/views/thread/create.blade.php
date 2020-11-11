@@ -30,7 +30,7 @@
                  <div class="form-group">
 
                     <label for="thread"> Thread</label>
-                     <textarea type="text" class="form-control" name='thread' id=''   placeholder='input....' value='{{old('thread')}}'> </textarea>
+                    <textarea class="form-control" name="thread" id="" placeholder="Input..."> {{old('thread')}}</textarea>
     
                      </div>
                 

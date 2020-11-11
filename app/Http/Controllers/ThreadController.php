@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class ThreadController extends Controller
 {
+    function __construct()
+    {
+        return $this->middleware('auth')->except('index');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -49,9 +53,7 @@ class ThreadController extends Controller
 
 
         //store
-
-            Thread:: create($request->all());
-
+        auth()->user()->threads()->create($request->all());
 
         //redirect
             return back()->withMessage('thread created');
@@ -92,6 +94,11 @@ class ThreadController extends Controller
      */
     public function update(Request $request, Thread $thread)
     {
+        //Allowing only the authorised user
+        if(auth()->user()->id !== $thread->user_id){
+            abort(401,"unauthorized");
+        }
+        
         // validation
         $this -> validate($request,[
 
@@ -100,7 +107,7 @@ class ThreadController extends Controller
             'thread'=> 'required|min:20',
 
         ]);
-
+        
         //update
 
         $thread->update($request->all());
@@ -117,6 +124,9 @@ class ThreadController extends Controller
      */
     public function destroy(Thread $thread)
     {
+        if(auth()->user()->id !== $thread->user_id){
+            abort(401,"unauthorized");
+        }
         $thread->delete();
         return redirect()->route('thread.index')->withMessage('Thread deleted');
     }
