@@ -8,8 +8,6 @@ use Illuminate\Http\Request;
 
 class CommentController extends Controller
 {
-
-
     //add comment method
 
     public function addThreadComment(Request $request, Thread $thread)
@@ -17,15 +15,40 @@ class CommentController extends Controller
         $this->validate($request,[
             'body'=>'required'
         ]);
+//This code segment is added to CommentableTraight.php
         //add method create object , save method creates arrays
-        $comment = new Comment();
-        $comment->body=$request->body;
-        $comment->user_id=auth()->user()->id;
+        //$comment = new Comment();
+        //$comment->body=$request->body;
+        //$comment->user_id=auth()->user()->id;
 
         //add commentable type and id
-        $thread -> comments()->save($comment);
+        //$thread -> comments()->save($comment);
+
+        $thread->addComment($request->body);
+
 
         return back()->withMeassage('Comment Created');
+    }
+
+    //add reply to a comment
+    public function addReplyComment(Request $request, Comment $comment)
+    {
+        $this->validate($request,[
+            'body'=>'required'
+        ]);
+        
+//This code segment is added to CommentableTraight.php
+        //add method create object , save method creates arrays
+        //$reply = new Comment();
+        //$reply->body=$request->body;
+        //$reply->user_id=auth()->user()->id;
+
+        //add commentable type and id
+        //$comment -> comments()->save($reply);
+
+        $comment->addComment($request->body);
+
+        return back()->withMeassage('Reply Created');
     }
    
 
