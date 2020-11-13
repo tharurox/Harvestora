@@ -23,7 +23,8 @@
     @yield('banner')
 
 <div class ="container">
-
+@include('layouts.partials.error')
+@include('layouts.partials.success')
 
     <div class="row">
 
