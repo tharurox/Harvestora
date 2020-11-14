@@ -21,3 +21,11 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 Route::resource('/thread', 'ThreadController');
+Route::post('/thread/mark-as-solution}','ThreadController@markAsSolution')->name('markAsSolution');
+Route::resource('comment', 'CommentController',['only'=>['update','destroy']]);
+
+Route::post('comment/create/{thread}', 'CommentController@addThreadComment')->name('threadcomment.store');
+
+Route::post('reply/create/{comment}', 'CommentController@addReplyComment')->name('replycomment.store');
+
+?>>>

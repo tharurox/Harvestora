@@ -23,53 +23,22 @@
     @yield('banner')
 
 <div class ="container">
+@include('layouts.partials.error')
+@include('layouts.partials.success')
 
     <div class="row">
 
-    <div class="row content-heading">
-
-    <div class="col-md-3"><h4>Catogory</h4></div>
-
-    <div class="col-md-9">
-
-        <div class="row">
-
-            <div class="col-md-4"><h4 class="main-content-heading">@yield('heading')</h4></div>
-
-            <div class="col-md-offset-6 col-md-2">
-               <a  class="btn btn-primary" href='{{route('thread.create')}}'> Create thread </a>
-                     </div>
-                 </div>
-              </div>
-
-
-        </div>
-    </div>
-
-
-    <div class="row">
-
-        {{--//catogory section--}}
-  <div class="col-md-3">
-
-    <ul class="list-group">
-
-        <a href="{{route('thread.index')}}" class="list-group-item">
-        
-        <span class="badge">14</span>
-        All thread
-        </a>
-
-        <a href="" class="list-group-item">
-
-            <span class="badge">2</span>
-           PHP
-        </a>
-    </ul>
-  </div>
-  <div class="col-md-9 well">
+        @section('category')
+            {{--//catogory section--}}
+            @include('layouts.partials.categories')
+        @show
+  
+        <div class="col-md-9 well">
+      <div class="row content-heading"><h4>@yield('heading')</h4></div>
+      <div class="content-wrap">
     @yield('content')
-</div>
+      </div>
+    </div>
     </div>
   
 </div>
@@ -77,6 +46,8 @@
 <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous">
 </script>
 <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js'></script>
+
+@yield('js')
 </body>
 </html>
 

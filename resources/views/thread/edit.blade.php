@@ -1,12 +1,11 @@
 @extends('layouts.front')
 
-@section('heading','Create Thread')
+@section('heading','Edit Thread')
 @section('content')
 
 @include('layouts.partials.error')
 @include('layouts.partials.success')
 
-<div class="row">
 
         <div class="well">
 
@@ -41,7 +40,5 @@
                 </form>
 
         </div>
-
-</div>
 
 @endsection
