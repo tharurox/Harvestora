@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Comment extends Model
 {
+    use CommentableTrait;
 
     protected $fillablel=['body','user_id'];
     //return all of the commentable models
@@ -19,5 +20,6 @@ class Comment extends Model
     {
         return $this->belongsTo(User::class);
     }
+
 
 }

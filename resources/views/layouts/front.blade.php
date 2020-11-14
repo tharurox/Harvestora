@@ -35,8 +35,10 @@
   
         <div class="col-md-9 well">
       <div class="row content-heading"><h4>@yield('heading')</h4></div>
+      <div class="content-wrap">
     @yield('content')
-</div>
+      </div>
+    </div>
     </div>
   
 </div>
@@ -44,6 +46,8 @@
 <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous">
 </script>
 <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js'></script>
+
+@yield('js')
 </body>
 </html>
 

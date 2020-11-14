@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Thread extends Model
 {
+    use CommentableTrait;
     protected $guarded = [];
 
     //A particular thread belongs to a certain user
@@ -13,8 +14,5 @@ class Thread extends Model
     {
         return $this->belongsTo(User::class);
     }
-    //comment to a certain thread 
-    public function comments(){
-        return $this->morphMany(Comment::class,'commentable');
-    }
+    
 }
