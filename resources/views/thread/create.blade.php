@@ -32,6 +32,13 @@
                     <textarea class="form-control" name="thread" id="" placeholder="Input..."> {{old('thread')}}</textarea>
     
                      </div>
+					 
+					 <div class="form-group">
+					 {!! NoCaptcha::renderJs() !!}
+
+                {!! NoCaptcha::display(); !!}
+
+                 </div>
                 
                 
     
