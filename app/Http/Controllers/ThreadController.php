@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Thread;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 
 class ThreadController extends Controller
 {
@@ -129,5 +130,21 @@ class ThreadController extends Controller
         }
         $thread->delete();
         return redirect()->route('thread.index')->withMessage('Thread deleted');
+    }
+
+    public function markAsSolution()
+    {
+       
+        $solutionId = Input::get('solutionId');
+        $threadId = Input::get('threadId');
+
+        $thread = Thread::find($threadId);
+        $thread->solution = $solutionId;
+        if ($thread->save()) {
+            return back()->withMessage('Marked as solution');
+            
+        }
+
+
     }
 }
