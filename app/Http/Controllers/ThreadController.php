@@ -49,6 +49,7 @@ class ThreadController extends Controller
             'subject'=>'required|min:10',
             'type'=> 'required',
             'thread'=> 'required|min:20',
+			'g-recaptcha-response' => 'required|captcha'
 
         ]);
 
