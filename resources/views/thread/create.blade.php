@@ -3,9 +3,6 @@
 @section('heading','Create Thread')
 @section('content')
 
-
-<div class="row">
-
         <div class="well">
 
                 <form class='form-vertical' action="{{route('thread.store')}}" method='post' role='form' id='create-thread-form'>
@@ -46,7 +43,5 @@
                 </form>
 
         </div>
-
-</div>
 
 @endsection
