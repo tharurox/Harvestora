@@ -142,6 +142,11 @@ class ThreadController extends Controller
         $thread = Thread::find($threadId);
         $thread->solution = $solutionId;
         if ($thread->save()) {
+
+            if(request()->ajax()){
+
+                return response()->json(['status'=>'success','message'=>'marked as solution']);
+            }
             return back()->withMessage('Marked as solution');
             
         }
