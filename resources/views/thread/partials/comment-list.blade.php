@@ -5,17 +5,22 @@
 @if(!empty($thread->solution))
    
     @if($thread->solution == $comment->id)
-    <button class="btn btn-suceess pull-right"> Solution</button>
+    <button class="btn btn-success pull-right"> Solution</button>
     @endif
 
 @else
-
-    <form action="{{route('markAsSolution')}}" method="post">
+    @if(auth()->check())
+        @if(auth()->user()->id == $thread->user_id)
+    {{-- <form action="{{route('markAsSolution')}}" method="post">
         {{csrf_field()}}
         <input type="hidden" name="threadId" value="{{$thread->id}}">
         <input type="hidden" name="solutionId" value="{{$comment->id}}">
         <input type="submit" class="btn btn-success pull-right" id="{{$comment->id}}" value="Mark As Solution">
-    </form>
+    </form> --}}
+
+<div  class="btn btn-success pull-right" onclick="markAsSolution('{{$thread->id}}','{{$comment->id}}',this)">Mark As Solution</div>
+    @endif
+    @endif
 @endif
 
 
@@ -63,13 +68,12 @@
 
 @section('js')
     <script>
-        function markAsSolution(threadId, solutionId,elem) {
+       function markAsSolution(threadId, solutionId,elem) {
             var csrfToken='{{csrf_token()}}';
             $.post('{{route('markAsSolution')}}', {solutionId: solutionId, threadId: threadId,_token:csrfToken}, function (data) {
-                $(elem).text('Solution');
+                    $(elem).text('solution');
             });
         }
-
        
 
 
