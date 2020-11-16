@@ -1,6 +1,4 @@
 @extends('layouts.front')
-
-
 @section('content')
 <div class="content-wrap well">
 
