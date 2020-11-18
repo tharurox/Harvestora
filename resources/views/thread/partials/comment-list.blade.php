@@ -30,8 +30,8 @@
 <div class="actions">
 
 <button class="btn btn-default btn-xs">{{$comment->likes()->count()}}</button>
-   <button class="btn btn-default btn-xs" onclick="likeIt('{{$comment->id}}',this)"><i class="fa fa-heart {{$comment->isLiked()?"liked":""}}" aria-hidden="true"></i></button>
-   {{--  <button class="btn btn-default btn-xs {{$comment->isLiked()?"liked":""}}" onclick="likeIt('{{$comment->id}}',this)"><span class="glyphicon glyphicon-heart"></button>--}}
+  <!-- <button class="btn btn-default btn-xs" onclick="likeIt('{{$comment->id}}',this)"><i class="fa fa-heart {{$comment->isLiked()?"liked":""}}" aria-hidden="true"></i></button> !-->
+  <button class="btn btn-default btn-xs {{$comment->isLiked()?"liked":""}}" onclick="likeIt('{{$comment->id}}',this)"><span class="glyphicon glyphicon-heart"></button>
 
     <a class="btn btn-primary btn-xs" data- ="modal" href="#{{$comment->id}}">edit</a>
     <div class="modal fade" id="{{$comment->id}}">

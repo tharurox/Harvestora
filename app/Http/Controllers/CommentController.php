@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Comment;
 use App\Thread;
 use Illuminate\Http\Request;
+use App\Notifications\RepliedToThread;
 
 class CommentController extends Controller
 {
@@ -25,7 +26,9 @@ class CommentController extends Controller
         //$thread -> comments()->save($comment);
 
         $thread->addComment($request->body);
-
+		
+		//send notifications
+		$thread->user->notify(new RepliedToThread($thread));
 
         return back()->withMeassage('Comment Created');
     }
