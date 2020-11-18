@@ -9,18 +9,19 @@
     @endif
 
 @else
-    @if(auth()->check())
+    <!-- @if(auth()->check())
         @if(auth()->user()->id == $thread->user_id)
     {{-- <form action="{{route('markAsSolution')}}" method="post">
         {{csrf_field()}}
         <input type="hidden" name="threadId" value="{{$thread->id}}">
         <input type="hidden" name="solutionId" value="{{$comment->id}}">
         <input type="submit" class="btn btn-success pull-right" id="{{$comment->id}}" value="Mark As Solution">
-    </form> --}}
-
+    </form> --}} -->
+    @can('update',$thread);
 <div  class="btn btn-success pull-right" onclick="markAsSolution('{{$thread->id}}','{{$comment->id}}',this)">Mark As Solution</div>
-    @endif
-    @endif
+    @endcan
+    <!-- @endif  
+    @endif -->
 @endif
 
 
@@ -29,10 +30,8 @@
 
 <div class="actions">
 
-<button class="btn btn-default btn-xs">{{$comment->likes()->count()}}</button>
-   <button class="btn btn-default btn-xs" onclick="likeIt('{{$comment->id}}',this)"><i class="fa fa-heart {{$comment->isLiked()?"liked":""}}" aria-hidden="true"></i></button>
-   {{--  <button class="btn btn-default btn-xs {{$comment->isLiked()?"liked":""}}" onclick="likeIt('{{$comment->id}}',this)"><span class="glyphicon glyphicon-heart"></button>--}}
-
+<button class="btn btn-default btn-xs" id="{{$comment->id}}-count">{{$comment->likes()->count()}}</button>
+   <span class="btn btn-default btn-xs" onclick="likeIt('{{$comment->id}}',this)"><span class="fa fa-heart {{$comment->isLiked()?"liked":""}}" aria-hidden="true"></span></span>
     <a class="btn btn-primary btn-xs" data- ="modal" href="#{{$comment->id}}">edit</a>
     <div class="modal fade" id="{{$comment->id}}">
         <div class="modal-dialog">
@@ -82,12 +81,14 @@
        
         function likeIt(commentId,elem){
             var csrfToken='{{csrf_token()}}';
-           
+            var likesCount=parseInt($('#'+commentId+"-count").text());
             $.post('{{route('toggleLike')}}', {commentId: commentId, _token:csrfToken}, function (data) {
                    console.log(data);
                    if(data.message==='liked'){
                         $(elem).addClass('liked');
+                        $('#'+commentId+"-count").text(likesCount+1);
                }else{
+                        $('#'+commentId+"-count").text(likesCount-1);
                         $(elem).removeClass('liked');
                    
                }
