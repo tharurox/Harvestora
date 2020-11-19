@@ -32,6 +32,7 @@
 
 <button class="btn btn-default btn-xs" id="{{$comment->id}}-count">{{$comment->likes()->count()}}</button>
    <span class="btn btn-default btn-xs" onclick="likeIt('{{$comment->id}}',this)"><span class="fa fa-heart {{$comment->isLiked()?"liked":""}}" aria-hidden="true"></span></span>
+
     <a class="btn btn-primary btn-xs" data- ="modal" href="#{{$comment->id}}">edit</a>
     <div class="modal fade" id="{{$comment->id}}">
         <div class="modal-dialog">
