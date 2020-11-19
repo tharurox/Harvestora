@@ -31,7 +31,7 @@
 				  <!-- Notifications -->
                   <li class="dropdown" id="markasread" onclick="markNotificationAsRead()">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                         <span class="glyphicon glyphicon-globe"></span> Notifications <span class="badge">{{count(auth()->user()->unreadNotifications)}}</span>
+                         <span class="fa fa-bell"></span> Notifications <span class="badge">{{count(auth()->user()->unreadNotifications)}}</span>
                       </a>
 
                       <ul class="dropdown-menu" role="menu">
