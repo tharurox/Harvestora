@@ -97,11 +97,13 @@ class ThreadController extends Controller
     public function update(Request $request, Thread $thread)
     {
         //Allowing only the authorised user
-        if(auth()->user()->id !== $thread->user_id){
-            abort(401,"unauthorized");
-        }
-        
+     //   if(auth()->user()->id !== $thread->user_id){
+       //     abort(401,"unauthorized");
+      //  } 
         // validation
+
+        $this->authorize('update',$thread);
+        
         $this -> validate($request,[
 
             'subject'=>'required|min:10',
@@ -126,9 +128,11 @@ class ThreadController extends Controller
      */
     public function destroy(Thread $thread)
     {
-        if(auth()->user()->id !== $thread->user_id){
-            abort(401,"unauthorized");
-        }
+      //  if(auth()->user()->id !== $thread->user_id){
+       //     abort(401,"unauthorized");
+       // }
+
+        $this->authorize('update',$thread);
         $thread->delete();
         return redirect()->route('thread.index')->withMessage('Thread deleted');
     }
