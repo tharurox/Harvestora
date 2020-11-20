@@ -16,9 +16,12 @@
 
                  <div class="form-group">
 
-                <label for="subject"> Type</label>
-                 <input type="text" class="form-control" name='type' id=''   placeholder='input....' value='{{old('type')}}'>
-
+                <label for="subject">Tags</label>
+                 <select type="text" class="form-control" multiple name='tags[]' id='tag' placeholder='Tags'>
+                 @foreach($tags as $tag)
+                        <option value="{{$tag->id}}">{{$tag->name}}</option>
+                 @endforeach
+                 </select>
                  </div>
                 
                 
@@ -44,4 +47,13 @@
 
         </div>
 
+@endsection
+
+@section('js')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js" integrity="sha512-hgoywpb1bcTi1B5kKwogCTG4cvTzDmFCJZWjit4ZimDIgXu7Dwsreq8GOQjKVUxFwxCWkLcJN5EN0W0aOngs4g==" crossorigin="anonymous"></script>
+        <script>
+                $(function() {
+                        $('#tag').selectize();
+                })
+        </script>
 @endsection

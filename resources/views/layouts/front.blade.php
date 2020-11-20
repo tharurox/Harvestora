@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.4/css/selectize.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js.map">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.min.css" integrity="sha512-87wkTHUArAnTBwQ5XL6+G68i54R3TXYDZoXewRsdhIv/ztcEr2Z1Mrk+aXBCKOZUtih0XWiBhXv3/bWjHTL2Bw==" crossorigin="anonymous" />
 
     
     
