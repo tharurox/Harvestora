@@ -1,6 +1,7 @@
 @extends('layouts.front')
 
 @section('heading','Create Thread')
+
 @section('content')
 
         <div class="well">
@@ -15,9 +16,13 @@
 
 
                  <div class="form-group">
-
-                <label for="subject"> Type</label>
-                 <input type="text" class="form-control" name='type' id=''   placeholder='input....' value='{{old('type')}}'>
+                        <label for="tag"> Tags</label>
+                        <select class="form-control" name="tags[]" multiple id="tag">
+                         
+                        @foreach($tags as $tag)
+                        <option value="{{$tag->id}}">{{$tag->name}}</option>
+                         @endforeach
+                 </select>
 
                  </div>
                 
@@ -29,12 +34,12 @@
     
                      </div>
 					 
-					 <div class="form-group">
+					{{-- <div class="form-group">
 					 {!! NoCaptcha::renderJs() !!}
 
                 {!! NoCaptcha::display(); !!}
 
-                 </div>
+                 </div>--}}
                 
                 
     
@@ -44,4 +49,15 @@
 
         </div>
 
+@endsection
+
+@section('js')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.4/js/standalone/selectize.min.js"></script>
+
+    <script>
+
+        $(function () {
+            $('#tag').selectize();
+        })
+    </script>
 @endsection
