@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Thread extends Model
 {
     use CommentableTrait;
-   // protected $guarded = [];
+   
 	protected $fillable=['subject','thread','user_id'];	
 
     //A particular thread belongs to a certain user
