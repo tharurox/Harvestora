@@ -1,7 +1,7 @@
 @extends('layouts.front')
 
 @section('heading')
-<a  class="btn btn-primary pull-right" href="{{route('thread.create')}}"> Create thread </a> <br>
+<a  class="btn btn-primary btn-success " href="{{route('thread.create')}}"> Create thread </a> <br>
 
 @endsection
 

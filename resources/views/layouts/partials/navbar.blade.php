@@ -1,48 +1,44 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container">
-      <div class="navbar-header">
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
 
-          <!-- Collapsed Hamburger -->
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-              <span class="sr-only">Toggle Navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
+        <a class="navbar-brand text-light " href="/">
+
+        <span class='ml-2 display-4'>Harvestora</span>
+        
+        </a>
+
+          <button class="m-2 navbar-toggler" type="button " data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
           </button>
+   
 
-          <!-- Branding Image -->
-          <a class="display-1 " href="/">Harvestora</a>
-          
-      </div>
-
-      <div class="collapse navbar-collapse" id="app-navbar-collapse">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <!-- Left Side Of Navbar -->
-          <ul class="nav navbar-nav">
+          <ul class="nav navbar-nav mr-auto">
               &nbsp;
           </ul>
 
           <!-- Right Side Of Navbar -->
-          <ul class="nav navbar-nav navbar-right">
+          <ul class="nav navbar-nav mr-3 navbar-right">
               <!-- Authentication Links -->
               @if (Auth::guest())
-                  <li><a href="{{ route('login') }}">Login</a></li>
-                  <li><a href="{{ route('register') }}">Register</a></li>
+                  <li><a class='btn btn-dark btn-lg m-1 ' href="{{ route('login') }}">Login</a></li>
+                  <li><a class='btn btn-dark btn-lg  m-1 ' href="{{ route('register') }}">Register</a></li>
               @else
 				  <!-- Notifications -->
           <notification :userid="{{auth()->id()}}" :unreads='{{auth()-> user()->unreadNotifications}}'> </notification>
 				  <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                          {{ Auth::user()->name }} <span class="caret"></span>
+                      <a href="#" class="dropdown-toggle btn btn-dark btn-lg  m-1" data-toggle="dropdown" role="button" aria-expanded="false">
+                          {{ Auth::user()->name }} 
                       </a>
 
                       <ul class="dropdown-menu" role="menu">
                           <li>
 
-                              <a href="{{ route('user_profile',auth()->user()) }}">
+                              <a class='btn  btn-lg  m-1' href="{{ route('user_profile',auth()->user()) }}">
                                 My Profile
                               </a>
 
-                              <a href="{{ route('logout') }}"
+                              <a class='btn  btn-lg  m-1' href="{{ route('logout') }}"
                                   onclick="event.preventDefault();
                                            document.getElementById('logout-form').submit();">
                                   Logout
@@ -57,7 +53,7 @@
               @endif
           </ul>
       </div>
-  </div>
+  
 </nav>
 
 
