@@ -1,6 +1,6 @@
 <div class="col-md-3">
 
-   
+    <a class="btn btn-info btn-lg"  href="{{route('thread.create')}}">Create Thread</a> <br><br>
     <h4>Tags</h4>
 
     <ul class="list-group">
