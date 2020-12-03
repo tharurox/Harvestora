@@ -3,10 +3,11 @@
 
 @section('banner')
     
-<div class="jumbotron bg-dark text-light">
+<section class="jumbotron bg-dark text-dark">
+  <div class="img"></div>
     <div class="container">
        
-      <div class=" text-center">
+      <div class="card text-center">
         
         <div class="card-body">
           <h5 class="card-title display-3">Welcome to Harvestora Community</h5>
@@ -20,7 +21,7 @@
       </div>
         </p>
     </div>
-</div>
+  </section>
 @endsection
 
 @section('heading','Threads')
