@@ -3,57 +3,44 @@
 namespace App\Http\Controllers;
 
 use App\Comment;
+use App\Notifications\RepliedToThread;
 use App\Thread;
 use Illuminate\Http\Request;
-use App\Notifications\RepliedToThread;
 
 class CommentController extends Controller
 {
-    //add comment method
 
     public function addThreadComment(Request $request, Thread $thread)
     {
         $this->validate($request,[
             'body'=>'required'
         ]);
-//This code segment is added to CommentableTraight.php
-        //add method create object , save method creates arrays
-        //$comment = new Comment();
-        //$comment->body=$request->body;
-        //$comment->user_id=auth()->user()->id;
 
-        //add commentable type and id
-        //$thread -> comments()->save($comment);
+//        $comment=new Comment();
+//        $comment->body=$request->body;
+//        $comment->user_id=auth()->user()->id;
+//
+//        $thread->comments()->save($comment);
 
         $thread->addComment($request->body);
-		
-		//send notifications
-		$thread->user->notify(new RepliedToThread($thread));
 
-        return back()->withMeassage('Comment Created');
+        $thread->user->notify(new RepliedToThread($thread));
+
+        return back()->withMessage('comment created');
     }
 
-    //add reply to a comment
     public function addReplyComment(Request $request, Comment $comment)
     {
         $this->validate($request,[
             'body'=>'required'
         ]);
-        
-//This code segment is added to CommentableTraight.php
-        //add method create object , save method creates arrays
-        //$reply = new Comment();
-        //$reply->body=$request->body;
-        //$reply->user_id=auth()->user()->id;
-
-        //add commentable type and id
-        //$comment -> comments()->save($reply);
 
         $comment->addComment($request->body);
 
-        return back()->withMeassage('Reply Created');
+        return back()->withMessage('Reply created');
     }
-   
+
+
 
     /**
      * Update the specified resource in storage.
@@ -73,7 +60,7 @@ class CommentController extends Controller
 
         $comment->update($request->all());
 
-        return back()->withMessage('Updated');
+        return back()->withMessage('updated');
     }
 
     /**
@@ -83,11 +70,13 @@ class CommentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(Comment $comment)
-    {       
+    {
         if($comment->user_id !== auth()->user()->id)
             abort('401');
 
         $comment->delete();
+
         return back()->withMessage('Deleted');
+
     }
 }
