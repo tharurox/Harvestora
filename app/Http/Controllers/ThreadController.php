@@ -23,7 +23,7 @@ class ThreadController extends Controller
     {
         if($request->has('tags')){
             $tags=Tag::find($request->tags);
-            $threads=$tag->threads;
+            $threads=$tags->threads;
         }else{
             $threads=Thread::paginate(15);
         }
