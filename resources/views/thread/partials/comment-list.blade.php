@@ -33,7 +33,7 @@
 <button class="btn btn-default btn-xs" id="{{$comment->id}}-count">{{$comment->likes()->count()}}</button>
    <span class="btn btn-default btn-xs" onclick="likeIt('{{$comment->id}}',this)"><span class="fa fa-heart {{$comment->isLiked()?"liked":""}}" aria-hidden="true"></span></span>
 
-    <a class="btn btn-primary btn-xs" data-toggle ="modal" href="#{{$comment->id}}">Edit</a>
+    <a class="btn btn-primary btn-xs" data- ="modal" href="#{{$comment->id}}">edit</a>
     <div class="modal fade" id="{{$comment->id}}">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -43,17 +43,13 @@
                 </div>
                 <div class="modal-body">
                     <div class="comment-form">
-                    <form action="{{route('comment.update',$comment->id)}}" method="post" role="form">
-                            {{ csrf_field() }}
-                            {{ method_field('PUT') }}
+                        <form action="{{route('comment.update',$comment->id)}}" method="post" role="form">
+                            {{csrf_field()}} {{method_field('put')}}
                             <legend>Edit comment</legend>
 
                             <div class="form-group">
-                                <input type="text" class="form-control" name="body" id=""
-                                       placeholder="Input..." value="{{$comment->body}}">
-                                <input type='hidden' name='_method' value='PUT'>
+                                <input type="text" class="form-control" name="body" id="" placeholder="input" value="{{$comment->body}}" />
                             </div>
-
 
                             <button type="submit" class="btn btn-primary">Comment</button>
                         </form>

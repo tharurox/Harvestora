@@ -1,79 +1,65 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container">
-      <div class="navbar-header">
 
-          <!-- Collapsed Hamburger -->
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-              <span class="sr-only">Toggle Navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-          </button>
+<nav class="navbar navbar-expand-lg navbar-success text-dark bg-light">
+  <a class="navbar-brand display-1" href="/">Harvestora</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-          <!-- Branding Image -->
-          <a class="display-1 " href="/">Harvestora</a>
-          
-      </div>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+    <ul class="nav navbar-nav navbar-right">
+      <!-- Authentication Links -->
+      @if (Auth::guest())
+          <li><a href="{{ route('login') }}" class='btn btn-lg btn-outline-secondary m-2'>Login</a></li>
+          <li><a href="{{ route('register') }}" class='btn btn-lg btn-outline-secondary m-2'>Register</a></li>
+      @else
+  <!-- Notifications -->
+  <notification :userid="{{auth()->id()}}" :unreads='{{auth()-> user()->unreadNotifications}}'> </notification>
+  <li class="dropdown">
+              <a href="#" class="dropdown-toggle btn btn-outline-secondary btn-lg" data-toggle="dropdown" role="button" aria-expanded="false">
+                  {{ Auth::user()->name }} </span>
+              </a>
 
-      <div class="collapse navbar-collapse" id="app-navbar-collapse">
-          <!-- Left Side Of Navbar -->
-          <ul class="nav navbar-nav">
-              &nbsp;
-          </ul>
-
-          <!-- Right Side Of Navbar -->
-          <ul class="nav navbar-nav navbar-right">
-              <!-- Authentication Links -->
-              @if (Auth::guest())
-                  <li><a href="{{ route('login') }}">Login</a></li>
-                  <li><a href="{{ route('register') }}">Register</a></li>
-              @else
-				  <!-- Notifications -->
-                  <li class="dropdown" id="markasread" onclick="markNotificationAsRead()">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                         <span class="fa fa-bell"></span> Notifications <span class="badge">{{count(auth()->user()->unreadNotifications)}}</span>
+              <ul class="dropdown-menu" role="menu">
+                  <li>
+                      <a href="{{ route('user_profile',auth()->user()) }}" class='btn btn-light col-12'>
+                        My Profile
                       </a>
 
-                      <ul class="dropdown-menu" role="menu">
-                          <li>
-							  @forelse(auth()->user()->unreadNotifications as $notification)
-									@include('layouts.partials.notification.'.snake_case(class_basename($notification->type)))
-									@empty
-									<a href="#">No Unread Notifications</a>
-							  @endforelse
-                             
-                          </li>
-                      </ul>
-                  </li>
-				  <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                          {{ Auth::user()->name }} <span class="caret"></span>
+                      <a href="{{ route('logout') }}"
+                          onclick="event.preventDefault();
+                                   document.getElementById('logout-form').submit();" class='btn btn-light  col-12'>
+                          Logout
                       </a>
 
-                      <ul class="dropdown-menu" role="menu">
-                          <li>
-
-                              <a href="{{ route('user_profile',auth()->user()) }}">
-                                My Profile
-                              </a>
-
-                              <a href="{{ route('logout') }}"
-                                  onclick="event.preventDefault();
-                                           document.getElementById('logout-form').submit();">
-                                  Logout
-                              </a>
-
-                              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                  {{ csrf_field() }}
-                              </form>
-                          </li>
-                      </ul>
+                      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                          {{ csrf_field() }}
+                      </form>
                   </li>
-              @endif
-          </ul>
-      </div>
+              </ul>
+          </li>
+      @endif
+  </ul>
   </div>
 </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     
