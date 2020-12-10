@@ -1,11 +1,12 @@
-<h4>{{$comment->body}}</h4>
+<div class='container'>
+<h5>{{$comment->body}}</h5>
 
 
 
 @if(!empty($thread->solution))
    
     @if($thread->solution == $comment->id)
-    <button class="btn btn-success pull-right"> Solution</button>
+    <button class="btn btn-success "> Solution</button>
     @endif
 
 @else
@@ -18,7 +19,7 @@
         <input type="submit" class="btn btn-success pull-right" id="{{$comment->id}}" value="Mark As Solution">
     </form> --}} -->
     @can('update',$thread);
-<div  class="btn btn-success pull-right" onclick="markAsSolution('{{$thread->id}}','{{$comment->id}}',this)">Mark As Solution</div>
+<div  class="btn btn-success float-right" onclick="markAsSolution('{{$thread->id}}','{{$comment->id}}',this)">Mark As Solution</div>
     @endcan
     <!-- @endif  
     @endif -->
@@ -33,8 +34,13 @@
 <button class="btn btn-default btn-xs" id="{{$comment->id}}-count">{{$comment->likes()->count()}}</button>
    <span class="btn btn-default btn-xs" onclick="likeIt('{{$comment->id}}',this)"><span class="fa fa-heart {{$comment->isLiked()?"liked":""}}" aria-hidden="true"></span></span>
 
-    <a class="btn btn-primary btn-xs" data- ="modal" href="#{{$comment->id}}">edit</a>
-    <div class="modal fade" id="{{$comment->id}}">
+    <a class="btn btn-primary btn-xs float right" data-="modal" href="#{{$comment->id}}">edit</a>
+
+ 
+
+    
+  
+    <div class="modal fade" id="{{$comment->id}}" tabindex="-1" role="dialog" aria-labelledby="{{$comment->id}}" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -64,12 +70,13 @@
 
     {{csrf_field()}}
     {{method_field('DELETE')}}
-    <input type="submit" class="btn btn-xs btn-danger" value='delete'>
+    <input type="submit" class="btn btn-xs btn-danger float-right" value='delete'>
 
 
     </form>
 </div>
 
+</div>
 
 @section('js')
     <script>
