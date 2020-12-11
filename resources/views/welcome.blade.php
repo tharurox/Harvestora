@@ -3,7 +3,7 @@
 
 @section('banner')
     
-<section class="jumbotron  text-dark">
+<section class="jumbotron  bg-light text-dark">
  
     <div class="container ">
        
