@@ -34,9 +34,19 @@
 <button class="btn btn-default btn-xs" id="{{$comment->id}}-count">{{$comment->likes()->count()}}</button>
    <span class="btn btn-default btn-xs" onclick="likeIt('{{$comment->id}}',this)"><span class="fa fa-heart {{$comment->isLiked()?"liked":""}}" aria-hidden="true"></span></span>
 
-    <a class="btn btn-primary btn-xs float right" data-="modal" href="#{{$comment->id}}">edit</a>
 
- 
+<div class='row'>
+   <form action="{{route('comment.destroy',$comment->id)}}"  method='POST' class="inline-it m-1">
+
+    {{csrf_field()}}
+    {{method_field('DELETE')}}
+    <input type="submit" class="btn btn-xs btn-danger float-right" value='delete'>
+
+
+    </form>
+   <a class="btn btn-primary btn-xs float right m-1" data-="modal" href="#{{$comment->id}}">edit</a>
+
+</div>
 
     
   
@@ -66,14 +76,7 @@
     </div>
 <!--  <a href="{{route('thread.edit',$thread->id)}}" class="btn btn-info btn-xs">Edit</a>  !-->
 
-    <form action="{{route('comment.destroy',$comment->id)}}"  method='POST' class="inline-it">
-
-    {{csrf_field()}}
-    {{method_field('DELETE')}}
-    <input type="submit" class="btn btn-xs btn-danger float-right" value='delete'>
-
-
-    </form>
+  
 </div>
 
 </div>
