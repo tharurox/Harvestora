@@ -13,7 +13,9 @@
 
                     <form class="form-horizontal m-5" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
-
+                        <a class="btn btn-link"  href="{{ route('register') }}">
+                            Don't have an account? Register Now !
+                              </a>
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <h5 for="email" class="col-md-4 display-5 text-success">Enter Email</h5>
 
@@ -48,7 +50,9 @@
                                     <label>
                                         <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
                                     </label>
+                                    
                                 </div>
+                                
                             </div>
                         </div>
 
@@ -63,9 +67,15 @@
                                 </a>
                             </div>
                         </div>
+
+                        <footer class='d-flex justify-content-center float-center'>&copy; Copyright 2020 Harvestora</footer>
                     </form>
-                
+                    
                 </div> 
+
+                
+
+                
         
     
 

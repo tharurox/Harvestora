@@ -11,7 +11,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-
+    <link rel="stylesheet" href="{{asset('css/custom.css')}}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.13.0/css/selectize.bootstrap4.css" integrity="sha512-wu84CEhfBSCIcQdVMnRfgdxzAvmk8wWrtg3JXIV6kp+ktoQu3lDJuWXtoTnsAZioCvNXiZvrO/tWicnQX9xptA==" crossorigin="anonymous" />
 
