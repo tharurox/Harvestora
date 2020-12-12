@@ -25,7 +25,9 @@
     @endif -->
 @endif
 
-
+@can('update',$thread);
+<div  class="btn btn-success pull-right" onclick="markAsSolution('{{$thread->id}}','{{$comment->id}}',this)">Mark As Solution</div>
+@endcan
 
 <lead>{{$comment->user->name}}</lead>
 

@@ -26,15 +26,42 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
-                            <label for="address" class="col-md-4 control-label">Address</label>
+                        <div class="form-group{{ $errors->has('city') ? ' has-error' : '' }}">
+                            <label for="city" class="col-md-4 control-label">City</label>
 
                             <div class="col-md-6">
-                                <input id="address" type="address" class="form-control" name="address" value="{{ old('address') }}" required>
+                                <input id="city" type="city" class="form-control" name="city" value="{{ old('city') }}" required>
 
-                                @if ($errors->has('address'))
+                                @if ($errors->has('city'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('address') }}</strong>
+                                        <strong>{{ $errors->first('city') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('city') ? ' has-error' : '' }}">
+                            <label for="city" class="col-md-4 control-label">Province</label>
+
+                            <div class="col-md-6">
+                                
+                                <select class="form-control" id="province" name="province">
+    
+                                    <option value="Sabaragamuwa">Sabaragamuwa (සබරගමුව පළාත)</option>
+                                    <option value="Western">Western (බස්නාහිර පළාත)</option>
+                                    <option value="Central">Central (මධ්‍යම පළාත)</option>
+                                    <option value="Southern">Southern Province (දකුණු පළාත) </option>
+                                    <option value="North Western">North Western(වයඹ පළාත)</option>
+                                    <option value="North Central">North Central (උතුරු මැද පළාත)</option>
+                                    <option value="Eastern Province">Eastern Province (නැගෙනහිර පළාත)</option>
+                                    <option value="Nothern">Nothern Province(උතුරු පළාත)</option>
+
+                                   
+                                </select>
+
+                                @if ($errors->has('province'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('province') }}</strong>
                                     </span>
                                 @endif
                             </div>

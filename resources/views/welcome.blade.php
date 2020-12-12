@@ -3,6 +3,7 @@
 
 @section('banner')
     
+<<<<<<< HEAD
 <section class="jumbotron  bg-light text-dark">
  
     <div class="container ">
@@ -19,6 +20,15 @@
         </div>
        
       </div>
+=======
+<div class="jumbotron">
+    <div class="container">
+        <h1> Join Harvesotra Community </h1>
+        <p> Help and Get Help </p>
+
+        <p>
+        <a class="btn btn-primary btn-lg"  href="{{route('home.learnmore')}}"> Learn More.! </a>
+>>>>>>> 2c9557ac6dac256afa482da16861c1ed1ff58437
         </p>
     </div>
   </section>
