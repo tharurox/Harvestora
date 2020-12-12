@@ -3,9 +3,9 @@
 
 @section('banner')
     
-<section class="jumbotron  bg-light text-dark">
- 
-    <div class="container ">
+<section class="jumbotron bg-dark text-dark">
+  <div class="img"></div>
+    <div class="container">
        
       <div class="card text-center">
         

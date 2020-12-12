@@ -1,12 +1,11 @@
-<div class='container'>
-<h5>{{$comment->body}}</h5>
+<h4>{{$comment->body}}</h4>
 
 
 
 @if(!empty($thread->solution))
    
     @if($thread->solution == $comment->id)
-    <button class="btn btn-success "> Solution</button>
+    <button class="btn btn-success pull-right"> Solution</button>
     @endif
 
 @else
@@ -19,7 +18,7 @@
         <input type="submit" class="btn btn-success pull-right" id="{{$comment->id}}" value="Mark As Solution">
     </form> --}} -->
     @can('update',$thread);
-<div  class="btn btn-success float-right" onclick="markAsSolution('{{$thread->id}}','{{$comment->id}}',this)">Mark As Solution</div>
+<div  class="btn btn-success pull-right" onclick="markAsSolution('{{$thread->id}}','{{$comment->id}}',this)">Mark As Solution</div>
     @endcan
     <!-- @endif  
     @endif -->
@@ -34,23 +33,8 @@
 <button class="btn btn-default btn-xs" id="{{$comment->id}}-count">{{$comment->likes()->count()}}</button>
    <span class="btn btn-default btn-xs" onclick="likeIt('{{$comment->id}}',this)"><span class="fa fa-heart {{$comment->isLiked()?"liked":""}}" aria-hidden="true"></span></span>
 
-
-<div class='row'>
-   <form action="{{route('comment.destroy',$comment->id)}}"  method='POST' class="inline-it m-1">
-
-    {{csrf_field()}}
-    {{method_field('DELETE')}}
-    <input type="submit" class="btn btn-xs btn-danger float-right" value='delete'>
-
-
-    </form>
-   <a class="btn btn-primary btn-xs float right m-1" data-="modal" href="#{{$comment->id}}">edit</a>
-
-</div>
-
-    
-  
-    <div class="modal fade" id="{{$comment->id}}" tabindex="-1" role="dialog" aria-labelledby="{{$comment->id}}" aria-hidden="true">
+    <a class="btn btn-primary btn-xs" data- ="modal" href="#{{$comment->id}}">edit</a>
+    <div class="modal fade" id="{{$comment->id}}">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -76,10 +60,16 @@
     </div>
 <!--  <a href="{{route('thread.edit',$thread->id)}}" class="btn btn-info btn-xs">Edit</a>  !-->
 
-  
+    <form action="{{route('comment.destroy',$comment->id)}}"  method='POST' class="inline-it">
+
+    {{csrf_field()}}
+    {{method_field('DELETE')}}
+    <input type="submit" class="btn btn-xs btn-danger" value='delete'>
+
+
+    </form>
 </div>
 
-</div>
 
 @section('js')
     <script>

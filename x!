@@ -1,0 +1,42 @@
+[33m7ab4bf2[m[33m ([m[1;36mHEAD -> [m[1;32mfrontend-modifications[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{0}: reset: moving to HEAD
+[33m7ab4bf2[m[33m ([m[1;36mHEAD -> [m[1;32mfrontend-modifications[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{1}: reset: moving to HEAD
+[33m7ab4bf2[m[33m ([m[1;36mHEAD -> [m[1;32mfrontend-modifications[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{2}: reset: moving to HEAD
+[33m7ab4bf2[m[33m ([m[1;36mHEAD -> [m[1;32mfrontend-modifications[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{3}: pull origin master: Fast-forward
+[33mf6dae13[m[33m ([m[1;31morigin/frontend-modifications[m[33m)[m HEAD@{4}: commit: UI modifications
+[33md7450a6[m HEAD@{5}: commit: basic UI changes
+[33m08554b6[m HEAD@{6}: checkout: moving from 08554b665ab36cfca0bb010705dcb7ecdf449028 to frontend-modifications
+[33m08554b6[m HEAD@{7}: reset: moving to HEAD@{3}
+[33mb064584[m HEAD@{8}: checkout: moving from frontend-modifications to b064584c7c313771199c9edfb7228055844fb9a2
+[33m08554b6[m HEAD@{9}: checkout: moving from old-state to frontend-modifications
+[33mb064584[m HEAD@{10}: checkout: moving from frontend-modifications to old-state
+[33m08554b6[m HEAD@{11}: commit (merge): front.blade change
+[33mb064584[m HEAD@{12}: commit: UI changes
+[33ma3ef182[m[33m ([m[1;31morigin/realtime-notification[m[33m, [m[1;32mrealtime-notification[m[33m)[m HEAD@{13}: checkout: moving from realtime-notification to frontend-modifications
+[33ma3ef182[m[33m ([m[1;31morigin/realtime-notification[m[33m, [m[1;32mrealtime-notification[m[33m)[m HEAD@{14}: commit: notifications
+[33m466876e[m[33m ([m[1;32mmark-as-solution-ajax[m[33m)[m HEAD@{15}: checkout: moving from mark-as-solution-ajax to realtime-notification
+[33m466876e[m[33m ([m[1;32mmark-as-solution-ajax[m[33m)[m HEAD@{16}: pull origin master: Fast-forward
+[33m54a00b8[m[33m ([m[1;31morigin/tag_error_fix[m[33m)[m HEAD@{17}: reset: moving to origin/master
+[33mc6a5fca[m HEAD@{18}: pull origin master: Fast-forward
+[33m851c00b[m[33m ([m[1;31morigin/mark-as-solution-ajax[m[33m)[m HEAD@{19}: reset: moving to ORIG_HEAD
+[33mc6a5fca[m HEAD@{20}: pull origin master: Fast-forward
+[33m851c00b[m[33m ([m[1;31morigin/mark-as-solution-ajax[m[33m)[m HEAD@{21}: commit: mark as solution ajax
+[33m8444df8[m[33m ([m[1;31morigin/solution-marking[m[33m, [m[1;32msolution-marking[m[33m)[m HEAD@{22}: checkout: moving from solution-marking to mark-as-solution-ajax
+[33m8444df8[m[33m ([m[1;31morigin/solution-marking[m[33m, [m[1;32msolution-marking[m[33m)[m HEAD@{23}: commit (merge): marking a comment as solution feature
+[33m92ee3cf[m[33m ([m[1;32mmaster[m[33m)[m HEAD@{24}: checkout: moving from master to solution-marking
+[33m92ee3cf[m[33m ([m[1;32mmaster[m[33m)[m HEAD@{25}: pull: Merge made by the 'recursive' strategy.
+[33m648ab6f[m HEAD@{26}: merge thread-crud: Merge made by the 'recursive' strategy.
+[33m43c1f2f[m HEAD@{27}: checkout: moving from thread-crud to master
+[33me26e79d[m[33m ([m[1;31morigin/thread-crud[m[33m, [m[1;32mthread-crud[m[33m)[m HEAD@{28}: commit: thread crud modifications
+[33m0b935c8[m HEAD@{29}: commit: thread-crud operations
+[33md02f244[m HEAD@{30}: commit: ui modifications
+[33m63e3060[m HEAD@{31}: pull origin master: Fast-forward
+[33m01a1857[m HEAD@{32}: checkout: moving from master to thread-crud
+[33m43c1f2f[m HEAD@{33}: commit (merge): navbar changes
+[33mf3b1c18[m HEAD@{34}: commit: Please enter the commit message for your changes. Lines starting
+[33m7ff2b79[m HEAD@{35}: reset: moving to HEAD
+[33m7ff2b79[m HEAD@{36}: commit: navbar modification
+[33m01a1857[m HEAD@{37}: checkout: moving from thread-crud to master
+[33m01a1857[m HEAD@{38}: checkout: moving from master to thread-crud
+[33m01a1857[m HEAD@{39}: checkout: moving from thread-crud to master
+[33m01a1857[m HEAD@{40}: checkout: moving from master to thread-crud
+[33m01a1857[m HEAD@{41}: clone: from https://github.com/tharurox/Harvestora.git
