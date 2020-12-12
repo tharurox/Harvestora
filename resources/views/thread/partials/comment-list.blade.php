@@ -6,7 +6,7 @@
 @if(!empty($thread->solution))
    
     @if($thread->solution == $comment->id)
-    <button class="btn btn-success "> Solution</button>
+    <button class="btn btn-success float-right"> Solution</button>
     @endif
 
 @else
