@@ -9,7 +9,7 @@
         <p> Help and Get Help </p>
 
         <p>
-            <a class="btn btn-primary btn-lg"> Learn More </a>
+        <a class="btn btn-primary btn-lg"  href="{{route('home.learnmore')}}"> Learn More.! </a>
         </p>
     </div>
 </div>

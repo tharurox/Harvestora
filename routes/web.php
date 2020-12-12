@@ -32,6 +32,7 @@ Route::post('comment/create/{thread}','CommentController@addThreadComment')->nam
 
 Route::post('reply/create/{comment}','CommentController@addReplyComment')->name('replycomment.store');
 
+Route::get('/learnmore','HomeController@learnmore')->name('home.learnmore');
 
 Route::post('comment/like','LikeController@toggleLike')->name('toggleLike');
 
