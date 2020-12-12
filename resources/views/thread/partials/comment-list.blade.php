@@ -31,11 +31,12 @@
 
 <div class="actions">
 
-<button class="btn btn-default btn-xs" id="{{$comment->id}}-count">{{$comment->likes()->count()}}</button>
-   <span class="btn btn-default btn-xs" onclick="likeIt('{{$comment->id}}',this)"><span class="fa fa-heart {{$comment->isLiked()?"liked":""}}" aria-hidden="true"></span></span>
+<button class="btn btn-default btn-xs" id="{{$comment->id}}-count">Likes({{$comment->likes()->count()}})</button>
+   <span class="btn btn-default btn-xs" data-toggle="tooltip" data-placement="top" title="Click to like comment" onclick="likeIt('{{$comment->id}}',this)"><span class="fa fa-heart {{$comment->isLiked()?"liked":""}}" aria-hidden="true"></span></span>
 
-
-<div class='row'>
+   @if(auth()->check())
+   @if(auth()->user()->id ==  $comment->user_id)
+    <div class='row'>
    <form action="{{route('comment.destroy',$comment->id)}}"  method='POST' class="inline-it m-1">
 
     {{csrf_field()}}
@@ -47,7 +48,8 @@
    <a class="btn btn-primary btn-xs float right m-1" data-="modal" href="#{{$comment->id}}">edit</a>
 
 </div>
-
+@endif  
+@endif
     
   
     <div class="modal fade" id="{{$comment->id}}" tabindex="-1" role="dialog" aria-labelledby="{{$comment->id}}" aria-hidden="true">
