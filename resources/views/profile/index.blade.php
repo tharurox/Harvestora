@@ -3,7 +3,7 @@
 @section('category')
     <div class="col-md-3" >
     <div class="dp">
-    <img src="https://dummyimage.com/300x200/000/fff" alt="">
+    <img src="https://dummyimage.com/200x200/000/fff" alt="">
     </div>
         <h3>
             {{$user->name}}
