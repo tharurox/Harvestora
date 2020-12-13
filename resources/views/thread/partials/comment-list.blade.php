@@ -51,7 +51,7 @@
 @endif  
 @endif
     
-<a class="btn btn-primary btn-xs" data-toggle ="modal" href="#{{$comment->id}}">Edit</a>
+
     <div class="modal fade" id="{{$comment->id}}">
         <div class="modal-dialog">
             <div class="modal-content">
