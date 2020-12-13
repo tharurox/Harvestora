@@ -2,7 +2,7 @@
 @section('content')
 <div class="container m-3">
 
-    <h4 class='display-4 text-info'>{{$thread->subject}}</h4>
+    <h4 class='display-5 text-info'>{{$thread->subject}}</h4>
     <hr>
 
     <div class="thread-details display-5">
@@ -65,9 +65,13 @@
      
 
         <div class="form-group row">
-            <input type="text" class="form-control m-2" name="body" id ="" placeholder="Reply to this comment...">
+            <div class="col-8">
+            <input type="text" class="form-control m-2 " name="body" id ="" placeholder="Reply to this comment...">
+        </div>
+            <div class="col-4">
 
-            <button type="submit" class="btn btn-primary m-2">Reply</button>
+            <button type="submit" class="btn btn-outline-dark m-2 ">Reply</button>
+        </div>
         </div>
 
 
@@ -78,12 +82,12 @@
 
            @foreach ($comment->comments as $reply)
 
-           <div class="container" style="margin-left: 40px">
+           <div class="container  comment-reply  ml-5 p-3" >
+            <p><a class='text-info' href='{{route('user_profile',$reply->user->name)}}' > {{$comment->user->name}}&nbsp;</a>replied: </p>
                <h5 class='text-dark display-5'>{{$reply->body}}</h5>
-             <div class='row'> <p>By </p> <p class='text-muted mx-1'> {{$reply->user->name}}</p></div>
 
                <div class="actions">
-                <button  data-toggle="modal" data-target="#{{$reply->id}}">edit reply</button>
+                <button  data-toggle="modal" class='btn btn-outline-info' data-target="#{{$reply->id}}">edit reply</button>
                 <div class="modal fade" id="{{$reply->id}}">
                     <div class="modal-dialog">
                         <div class="modal-content">

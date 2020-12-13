@@ -36,16 +36,16 @@
 </div>
    @if(auth()->check())
    @if(auth()->user()->id ==  $comment->user_id)
-    <div class='row'>
+    <div class='row d-flex justify-content-end m-1'>
    <form action="{{route('comment.destroy',$comment->id)}}"  method='POST' class="inline-it m-1">
 
     {{csrf_field()}}
     {{method_field('DELETE')}}
-    <input type="submit" class="btn btn-xs btn-danger float-right" value='delete'>
+    <input type="submit" class="btn btn-xs btn-outline-danger float-right" value='delete'>
 
 
     </form>
-   <a class="btn btn-primary btn-xs float right m-1" data-="modal" href="#{{$comment->id}}">edit</a>
+   <a class="btn btn-outline-primary btn-xs float right m-1" data-="modal" href="#{{$comment->id}}">edit</a>
 
 </div>
 @endif  

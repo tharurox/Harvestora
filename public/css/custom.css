@@ -26,9 +26,16 @@
     font-size: smaller;
 }
 
+.thread-details{
 
-.comment-body{
+    font-family: 'Roboto', sans-serif;
+    font-size:xx-large;
+}
+.comment-body {
     font-family: 'Roboto', sans-serif;
     font-size:x-large;
 }
 
+.comment-reply{
+    background-color: beige;
+}
