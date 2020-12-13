@@ -1,6 +1,6 @@
 <div class='container comment m-2 p-2'>
 
-    <p><a class='text-info' href='{{route('user_profile',$comment->user->name)}}' > {{$comment->user->name}}&nbsp;</a>Commented: </p> 
+    <p><a class='text-info' href='{{route('user_profile',$comment->user->name)}}' > {{$comment->user->name}}&nbsp</a>Commented: </p> 
 <p class='text-dark comment-body'>{{$comment->body}}</p>
 
 
@@ -20,7 +20,7 @@
         <input type="hidden" name="solutionId" value="{{$comment->id}}">
         <input type="submit" class="btn btn-success pull-right" id="{{$comment->id}}" value="Mark As Solution">
     </form> --}} -->
-    @can('update',$thread);
+    @can('update',$thread)
 <div  class="btn btn-success float-right" onclick="markAsSolution('{{$thread->id}}','{{$comment->id}}',this)">Mark As Solution</div>
     @endcan
     <!-- @endif  
@@ -45,11 +45,14 @@
 
 
     </form>
-   <a class="btn btn-outline-primary btn-xs float right m-1" data-="modal" href="#{{$comment->id}}">edit</a>
 
+    <a class="btn btn-outline-primary " data-toggle ="modal" href="#{{$comment->id}}">Edit</a>
 </div>
 @endif  
 @endif
+
+
+
     
 
     <div class="modal fade" id="{{$comment->id}}">
@@ -65,6 +68,10 @@
                             {{ csrf_field() }}
                             {{ method_field('PUT') }}
                             <legend>Edit comment</legend>
+
+
+                           
+
 
                             <div class="form-group">
                                 <input type="text" class="form-control" name="body" id=""
