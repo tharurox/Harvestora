@@ -14,3 +14,21 @@
 
     opacity:1;
 }
+
+.comment {
+
+    background-color: #E2E0E0;
+    border-radius: 2px;
+    
+}
+
+.comment p>a{
+    font-size: smaller;
+}
+
+
+.comment-body{
+    font-family: 'Roboto', sans-serif;
+    font-size:x-large;
+}
+

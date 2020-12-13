@@ -1,4 +1,4 @@
-<div class="list-group mt-4">
+<div class="list-group mt-4 thread">
     @forelse($threads as $thread)
 
     <div class="card text-center m-2">
@@ -7,7 +7,7 @@
           </div>
         <div class="card-body">
          
-          <h4 class="card-text">{{str_limit($thread->thread,100) }}</h4>
+          <p class="card-text">{{str_limit($thread->thread,100) }}</p>
          
         </div>
         <div class="card-footer text-muted bg-white">

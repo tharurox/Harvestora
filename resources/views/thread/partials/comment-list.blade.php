@@ -1,5 +1,7 @@
-<div class='container'>
-<h5>{{$comment->body}}</h5>
+<div class='container comment m-2 p-2'>
+
+    <p><a class='text-info' href='{{route('user_profile',$comment->user->name)}}' > {{$comment->user->name}}&nbsp;</a>Commented: </p> 
+<p class='text-dark comment-body'>{{$comment->body}}</p>
 
 
 
@@ -27,13 +29,11 @@
 
 
 
-<lead>{{$comment->user->name}}</lead>
-
 <div class="actions">
-
-<button class="btn btn-default btn-xs" id="{{$comment->id}}-count">Likes({{$comment->likes()->count()}})</button>
+<div class="container like-box">
+<button class="btn btn-default btn-xs" id="{{$comment->id}}-count">Likes ({{$comment->likes()->count()}})</button>
    <span class="btn btn-default btn-xs" data-toggle="tooltip" data-placement="top" title="Click to like comment" onclick="likeIt('{{$comment->id}}',this)"><span class="fa fa-heart {{$comment->isLiked()?"liked":""}}" aria-hidden="true"></span></span>
-
+</div>
    @if(auth()->check())
    @if(auth()->user()->id ==  $comment->user_id)
     <div class='row'>
