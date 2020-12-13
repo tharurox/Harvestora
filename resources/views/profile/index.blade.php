@@ -16,12 +16,25 @@
 @section('content')
 <div>
     
+    <h3>{{$user->name}}'s latest Threads</h3>
 
-    <h5> Name : {{$user->name}} </h5>
-    <h5> Email : {{$user->email}} </h5>
+    @forelse($threads as $thread)
+        <h5>{{$thread->subject}}</h5>
+
+    @empty
+        <h5>No threads yet</h5>
+
+    @endforelse
     <br>
     <hr>
 
+    <h3>{{$user->name}}'s latest Comments</h3>
+
+    @forelse($comments as $comment)
+        <h5>{{$user->name}} commented on <a href="{{route('thread.show',$comment->commentable->id)}}">{{$comment->commentable->subject}}</a>  {{$comment->created_at->diffForHumans()}}</h5>
+    @empty
+    <h5>No comments yet</h5>
+    @endforelse
 </div>
 
 @endsection

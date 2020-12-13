@@ -51,8 +51,8 @@
 @endif  
 @endif
     
-  
-    <div class="modal fade" id="{{$comment->id}}" tabindex="-1" role="dialog" aria-labelledby="{{$comment->id}}" aria-hidden="true">
+<a class="btn btn-primary btn-xs" data-toggle ="modal" href="#{{$comment->id}}">Edit</a>
+    <div class="modal fade" id="{{$comment->id}}">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -61,13 +61,17 @@
                 </div>
                 <div class="modal-body">
                     <div class="comment-form">
-                        <form action="{{route('comment.update',$comment->id)}}" method="post" role="form">
-                            {{csrf_field()}} {{method_field('put')}}
+                    <form action="{{route('comment.update',$comment->id)}}" method="post" role="form">
+                            {{ csrf_field() }}
+                            {{ method_field('PUT') }}
                             <legend>Edit comment</legend>
 
                             <div class="form-group">
-                                <input type="text" class="form-control" name="body" id="" placeholder="input" value="{{$comment->body}}" />
+                                <input type="text" class="form-control" name="body" id=""
+                                       placeholder="Input..." value="{{$comment->body}}">
+                                <input type='hidden' name='_method' value='PUT'>
                             </div>
+
 
                             <button type="submit" class="btn btn-primary">Comment</button>
                         </form>
