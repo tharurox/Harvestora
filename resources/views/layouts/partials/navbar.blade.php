@@ -1,8 +1,8 @@
 
 <nav class="navbar navbar-expand-lg navbar-success text-dark bg-light">
   <a class="navbar-brand display-1" href="/">Harvestora</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+  <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fa fa-bars" aria-hidden="true"></i>
   </button>
 
   <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
@@ -19,8 +19,8 @@
        <span class="fa fa-bell"></span> Notifications <span class="badge">{{count(auth()->user()->unreadNotifications)}}</span>
     </a>
 
-    <ul class="dropdown-menu" role="menu">
-        <li>
+    <ul class="dropdown-menu " role="menu">
+        <li class='dropdown-item'>
 @forelse(auth()->user()->unreadNotifications as $notification)
 @include('layouts.partials.notification.'.snake_case(class_basename($notification->type)))
 @empty
