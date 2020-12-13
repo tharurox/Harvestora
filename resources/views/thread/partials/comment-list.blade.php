@@ -55,7 +55,7 @@
 
     
 
-    <div class="modal fade" id="{{$comment->id}}">
+    <div class="modal " id="{{$comment->id}}">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -119,7 +119,9 @@
             });
         }
 
-        
+        $('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})
 
     </script>
 
